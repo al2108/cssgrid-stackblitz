@@ -1,0 +1,23 @@
+<div id="form">
+  <div>Input-1</div>
+  <div>Input-2</div>
+  <div *ngIf="showMore">Input-3</div>
+  <div *ngIf="showMore">Input-4</div>
+  <div *ngIf="showMore">Input-5</div>
+  <div *ngIf="showMore">Input-6</div>
+</div>
+<div id="btn-show-more" class="button" (click)="onToggleFields()">
+  {{ btnLabel }}
+</div>
+<div id="btn-reset" class="button">Reset</div>
+<div id="grid">
+  <ag-grid-angular
+    style="width: 100%; height: 100%"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+  >
+  </ag-grid-angular>
+</div>
+<div id="btn-prev" class="button">Previous</div>
+<div id="btn-next" class="button">Next</div>

@@ -1,0 +1,67 @@
+div {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+:host {
+  height: calc(100% - 10px);
+  height: auto;
+  padding: 5px;
+  display: grid;
+  column-gap: 5px;
+  row-gap: 5px;
+  grid:
+    "form   form   form      form" auto
+    ".      .      btn-reset btn-show-more" auto
+    ".      .      btn-prev  btn-next" auto
+    "grid   grid   grid      grid" 1fr
+    / 1fr auto auto;
+}
+
+@media (min-width: 380px) {
+  :host {
+    display: grid;
+    grid:
+      "form   form   form      form" auto
+      ".      .      btn-reset btn-show-more" auto
+      "grid   grid   grid      grid" 1fr
+      ".      .      btn-prev  btn-next" auto
+      / 1fr auto auto;
+  }
+}
+
+#form {
+  background-color: lightblue;
+  grid-area: form;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.button {
+  background-color: greenyellow;
+  text-align: center;
+}
+
+#btn-show-more {
+  grid-area: btn-show-more;
+  cursor: pointer;
+}
+
+#btn-reset {
+  grid-area: btn-reset;
+}
+
+#grid {
+  grid-area: grid;
+}
+
+#btn-next {
+  grid-area: btn-next;
+}
+
+#btn-prev {
+  grid-area: btn-prev;
+}

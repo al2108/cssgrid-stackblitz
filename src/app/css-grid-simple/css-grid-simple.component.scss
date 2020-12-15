@@ -1,0 +1,74 @@
+div {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+:host {
+  height: calc(100% - 10px);
+  padding: 5px;
+  display: grid;
+  column-gap: 5px;
+  row-gap: 5px;
+  grid:
+    "header header header    header" auto
+    "form   form   form      form" auto
+    ".      .      btn-reset btn-search" auto
+    ".      .      btn-prev  btn-next" auto
+    "grid   grid   grid      grid" 1fr
+    / 1fr 1fr auto auto;
+}
+
+@media (min-width: 380px) {
+  :host {
+    display: grid;
+    grid:
+      "header header header    header" auto
+      "form   form   form      form" auto
+      ".      .      btn-reset btn-search" auto
+      "grid   grid   grid      grid" 1fr
+      ".      .      btn-prev  btn-next" auto
+      / 1fr 1fr auto auto;
+  }
+}
+
+#header {
+  grid-area: header;
+  background-color: lightcoral;
+  font-size: 2em;
+}
+
+#form {
+  background-color: lightblue;
+  grid-area: form;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.button {
+  background-color: greenyellow;
+  text-align: center;
+}
+
+#btn-search {
+  grid-area: btn-search;
+}
+
+#btn-reset {
+  grid-area: btn-reset;
+}
+
+#btn-next {
+  grid-area: btn-next;
+}
+
+#btn-prev {
+  grid-area: btn-prev;
+}
+
+#grid {
+  grid-area: grid;
+  background-color: lightyellow;
+}
